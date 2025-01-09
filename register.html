@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign-Up Form</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #video-background {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .form-container {
+      width: 450px;
+      background: rgba(20, 50, 20, 0.9);
+      color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 24px;
+      background: #3c8d3c;
+      cursor: pointer;
+    }
+
+    .form-header div {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .form-header .active {
+      background: #2b6d2b;
+      border-bottom: 4px solid #78e678;
+      color: #78e678;
+    }
+
+    .form-body {
+      padding: 25px;
+    }
+
+    .form-body form {
+      display: none;
+    }
+
+    .form-body form.active {
+      display: block;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #aef4ae;
+    }
+
+    form input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1px solid #3c8d3c;
+      border-radius: 6px;
+      background: rgba(20, 50, 20, 0.95);
+      color: #aef4ae;
+    }
+
+    form input:focus {
+      border-color: #78e678;
+      outline: none;
+      box-shadow: 0 0 6px #78e678;
+    }
+
+    form button {
+      width: 100%;
+      padding: 12px;
+      background: #3c8d3c;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    form button:hover {
+      background: #78e678;
+      box-shadow: 0 0 12px #78e678;
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 12px;
+      color: #78e678;
+      cursor: pointer;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+
+    .toggle-link:hover {
+      color: #3c8d3c;
+    }
+
+    
+  </style>
+</head>
+<body>
+  
+
+  <video autoplay muted loop id="video-background">
+    <source src="image/VIDEOO.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="form-container">
+    <div class="form-header">
+      <div id="login-tab" class="active">Login</div>
+      <div id="signup-tab">Sign Up</div>
+    </div>
+    <div class="form-body">
+      <form id="login-form" class="active" method="post" action="login.php">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+        <button type="submit">Login</button>
+        <div class="toggle-link" id="go-to-signup">Don't have an account? Sign up</div>
+      </form>
+
+      <form id="signup-form" method="post" action="register.php">
+        <label for="signup-name">Full Name</label>
+        <input type="text" id="signup-name" name="full_name" placeholder="Enter your full name" required>
+        <label for="signup-email">Email</label>
+        <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+        <label for="signup-password">Password</label>
+        <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+        <button type="submit">Sign Up</button>
+        <div class="toggle-link" id="go-to-login">Already have an account? Login</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const loginTab = document.getElementById('login-tab');
+    const signupTab = document.getElementById('signup-tab');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const goToSignup = document.getElementById('go-to-signup');
+    const goToLogin = document.getElementById('go-to-login');
+    const loader = document.getElementById("loader");
+
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.classList.add('active');
+      signupForm.classList.remove('active');
+    });
+
+    signupTab.addEventListener('click', () => {
+      signupTab.classList.add('active');
+      loginTab.classList.remove('active');
+      signupForm.classList.add('active');
+      loginForm.classList.remove('active');
+    });
+
+    
+  </script>
+</body>
+</html>

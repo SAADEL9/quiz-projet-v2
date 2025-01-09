@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="loader">
+        <div class="container">
+          <div class="content">
+            <div class="content__container">
+              <p class="content__container__text">Hello</p>
+              <ul class="content__container__list">
+                <li class="content__container__list__item">world !</li>
+                <li class="content__container__list__item">coder !</li>
+                <li class="content__container__list__item">users !</li>
+                <li class="content__container__list__item">uiverse</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+<div id="main-content" style="display: none;">
+    <nav>
+        <div class="logo">
+            <h2>Logo</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="btn login-btn"><a href="register.html">register</a></button>
+            <button class="btn register-btn">login</button>
+        </div>
+    </nav>
+    <section class="sec1">
+        <div class="hero-text">
+            <h1>Welcome to Quiz Master</h1>
+            <p>Test your knowledge, challenge your friends, and climb the leaderboard!</p>
+            <button class="btn start-btn">Start Now</button>
+        </div>
+    </section>
+    <h2>quiz</h2>
+    <section class="sec2">
+        
+        <div class="div1">
+            <div class="img_div"><img src="image/python.jpg" alt="Python Quiz"></div>
+            <h3>Python Quiz</h3>
+            <p>10 Questions</p>
+            <button>Enter</button>
+        </div>
+        <div class="div1">
+            <div class="img_div"><img src="image/python.jpg" alt="Python Quiz"></div>
+            <h3>Python Quiz</h3>
+            <p>10 Questions</p>
+            <button >Enter</button>
+        </div>
+        <div class="div1">
+            <div class="img_div"><img src="image/python.jpg" alt="Python Quiz"></div>
+            <h3>Python Quiz</h3>
+            <p>10 Questions</p>
+            <button>Enter</button>
+        </div>
+        <div class="div1">
+            <div class="img_div"><img src="image/python.jpg" alt="Python Quiz"></div>
+            <h3>Python Quiz</h3>
+            <p>10 Questions</p>
+            <button>Enter</button>
+        </div>
+        <div class="div1">
+            <div class="img_div"><img src="image/python.jpg" alt="Python Quiz"></div>
+            <h3>Python Quiz</h3>
+            <p>10 Questions</p>
+            <button>Enter</button>
+        </div>
+        <div class="div1">
+            <div class="img_div"><img src="image/python.jpg" alt="Python Quiz"></div>
+            <h3>Python Quiz</h3>
+            <p>10 Questions</p>
+            <button>Enter</button>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Quiz Master</h3>
+                <p>Quiz Master is your ultimate destination to test your knowledge, compete with friends, and have fun while learning!</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="leaderboard.html">Leaderboard</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@quizmaster.com">info@quizmaster.com</a></p>
+                <p>Phone: +123 456 789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Quiz Master. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+    
+</div>
+    <script>
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader');
+  const mainContent = document.getElementById('main-content');
+  
+  // Add a delay before hiding the loader
+  setTimeout(() => {
+    loader.style.opacity = '0'; // Fade out the loader
+    loader.style.transition = 'opacity 1s'; // Smooth fade-out transition
+
+    setTimeout(() => {
+      loader.style.display = 'none'; // Hide after fade-out
+      mainContent.style.display = 'block'; // Show main content
+    }, 1000); // Match the fade-out duration
+  }, 2000); // Delay before hiding (e.g., 2 seconds)
+});
+
+
+        </script>
+        
+</body>
+</html>
